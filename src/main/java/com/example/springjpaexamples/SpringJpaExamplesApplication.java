@@ -1,15 +1,21 @@
 package com.example.springjpaexamples;
 
+import com.example.springjpaexamples.model.Course;
+import com.example.springjpaexamples.model.Student;
 import com.example.springjpaexamples.model.Person;
+import com.example.springjpaexamples.repositories.CourseRepository;
+import com.example.springjpaexamples.repositories.StudentRepository;
 import com.example.springjpaexamples.repositories.PersonRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -31,7 +37,7 @@ public class SpringJpaExamplesApplication implements ApplicationRunner {
         loadPersons.forEach(personRepositories::save);
     }
 
-    public List<Person> loadPersonsData(){
+    public List<Person> loadPersonsData() {
         Person person1 = new Person();
         person1.setFirstName("Ahmad");
         person1.setLastName("Nazari");
@@ -65,6 +71,6 @@ public class SpringJpaExamplesApplication implements ApplicationRunner {
         person3.setActive(new Random().nextBoolean());
 
 
-        return List.of(person1, person2, person3, person5);
+        return Arrays.asList(person1, person2, person3, person5);
     }
 }

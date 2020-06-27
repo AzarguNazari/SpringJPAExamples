@@ -58,4 +58,12 @@ class PersonTests {
         Assert.isTrue(persons.size() > 0, "size is " + persons.size());
     }
 
+    @Test
+    public void personsBetween23And25(){
+
+        List<Person> byAgeBetween = personRepositories.findByAgeBetween(23, 25);
+        Assert.isTrue(byAgeBetween.size() == 3, "There are some person between age of 23 and 26");
+
+    }
+
 }

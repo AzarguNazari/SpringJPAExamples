@@ -1,14 +1,15 @@
 package com.example.springjpaexamples.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "person")
-@Data
+@Table
+@Setter
+@Getter
 public class Person {
 
     @Id

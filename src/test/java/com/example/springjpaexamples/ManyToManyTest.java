@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
 @SpringBootTest
 public class ManyToManyTest {
